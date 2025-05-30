@@ -11,6 +11,7 @@
 1. **Buka Colab dengan link baru:** https://colab.research.google.com/github/GayuhAbdiMahardika/gan-chili-project/blob/main/colab_setup.ipynb
 
 2. **Jalankan CELL PERTAMA** - Setup GitHub:
+
    ```python
    # 🚀 STEP 1: Clone GitHub Repository
    !git clone https://github.com/GayuhAbdiMahardika/gan-chili-project.git
@@ -18,6 +19,7 @@
    ```
 
 3. **Jalankan CELL KEDUA** - Check Dataset:
+
    ```python
    # 📁 STEP 2: Setup Dataset
    # Cell ini akan mengecek apakah dataset ada dan memberi instruksi
@@ -32,6 +34,7 @@
 ## 📦 **Cara Compress Dataset untuk Upload:**
 
 ### **Metode 1: Menggunakan Script Python**
+
 ```bash
 # Jalankan di terminal/command prompt
 cd "c:\Riset Infromatika\Python V3\GAN_Project"
@@ -39,6 +42,7 @@ python compress_dataset.py
 ```
 
 ### **Metode 2: Manual Compress**
+
 1. Right-click folder `Dataset Original`
 2. Send to → Compressed (zipped) folder
 3. Rename menjadi `Dataset_Original.zip`
@@ -193,10 +197,12 @@ print("✅ Hasil training berhasil disimpan ke GitHub!")
 ## 🔧 Troubleshooting
 
 ### ❌ Error: "destination path already exists and is not an empty directory"
+
 **Penyebab:** Repository sudah pernah di-clone sebelumnya di session Colab
 **Solusi - Pilih salah satu:**
 
 **Option A: Update Repository yang Ada (Recommended)**
+
 ```python
 # Cell setup sudah otomatis handle ini - akan update repo yang ada
 %cd gan-chili-project
@@ -204,6 +210,7 @@ print("✅ Hasil training berhasil disimpan ke GitHub!")
 ```
 
 **Option B: Force Fresh Clone**
+
 ```python
 # Jalankan troubleshooting cell di notebook
 # Uncomment kode di dalam triple quotes dan jalankan
@@ -214,15 +221,18 @@ shutil.rmtree("gan-chili-project")
 ```
 
 **Option C: Restart Colab Runtime**
+
 ```
 Runtime → Restart runtime → Jalankan ulang dari cell pertama
 ```
 
 ### ❌ Error: "Dataset not found!"
+
 **Penyebab:** Dataset belum di-upload atau path salah
 **Solusi - Pilih salah satu:**
 
 **Option A: Google Drive**
+
 ```python
 # 1. Upload folder "Dataset Original" ke Google Drive
 # 2. Jalankan cell Google Drive upload di notebook
@@ -232,6 +242,7 @@ Runtime → Restart runtime → Jalankan ulang dari cell pertama
 ```
 
 **Option B: ZIP Upload**
+
 ```python
 # 1. Compress folder "Dataset Original" menjadi ZIP
 # 2. Jalankan cell ZIP upload di notebook
