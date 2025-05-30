@@ -1,0 +1,115 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyTorch Models (Large files)
+*.pth
+*.pkl
+*.pt
+*.bin
+*.h5
+*.weights
+*.model
+
+# Datasets (Too large for Git)
+Dataset Original/
+Dataset Augmented/
+data/full_dataset/
+dataset*.zip
+*.tar.gz
+*.rar
+
+# Training Outputs
+colab_models/
+colab_augmented/
+models/
+results/
+outputs/
+checkpoints/
+logs/*.log
+wandb/
+
+# Generated Images and Training Results
+*.png
+*.jpg
+*.jpeg
+*.gif
+quick_demo_output/
+quick_healthy/
+cpu_samples/
+cpu_models/
+gan_samples/
+gan_models/
+visualization_results/
+src/quick_results_*/
+quick_results_*/
+
+# Large generated files
+generated/
+samples/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+
+# Google Colab
+sample_data/
+
+# Git LFS (if using)
+*.gitattributes
+
+# Keep small sample datasets (uncomment if needed)
+# !data/sample_train/
+# !data/test_small/
