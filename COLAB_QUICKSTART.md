@@ -4,13 +4,47 @@
 
 ### 📋 Langkah-langkah menjalankan di Google Colab:
 
-## 1. **Buka Notebook di Colab**
+## 🎯 **SOLUSI UNTUK ERROR YANG ANDA ALAMI:**
 
-Klik link berikut untuk membuka langsung di Google Colab:
+### ✅ **Step-by-step fix:**
 
+1. **Buka Colab dengan link baru:** https://colab.research.google.com/github/GayuhAbdiMahardika/gan-chili-project/blob/main/colab_setup.ipynb
+
+2. **Jalankan CELL PERTAMA** - Setup GitHub:
+   ```python
+   # 🚀 STEP 1: Clone GitHub Repository
+   !git clone https://github.com/GayuhAbdiMahardika/gan-chili-project.git
+   %cd gan-chili-project
+   ```
+
+3. **Jalankan CELL KEDUA** - Check Dataset:
+   ```python
+   # 📁 STEP 2: Setup Dataset
+   # Cell ini akan mengecek apakah dataset ada dan memberi instruksi
+   ```
+
+4. **Upload Dataset** - Pilih salah satu:
+   - **Option A:** Google Drive (recommended)
+   - **Option B:** ZIP file upload
+
+---
+
+## 📦 **Cara Compress Dataset untuk Upload:**
+
+### **Metode 1: Menggunakan Script Python**
+```bash
+# Jalankan di terminal/command prompt
+cd "c:\Riset Infromatika\Python V3\GAN_Project"
+python compress_dataset.py
 ```
-https://colab.research.google.com/github/GayuhAbdiMahardika/gan-chili-project/blob/main/colab_setup.ipynb
-```
+
+### **Metode 2: Manual Compress**
+1. Right-click folder `Dataset Original`
+2. Send to → Compressed (zipped) folder
+3. Rename menjadi `Dataset_Original.zip`
+4. Upload ke Colab atau Google Drive
+
+---
 
 ## 2. **Aktifkan GPU**
 
