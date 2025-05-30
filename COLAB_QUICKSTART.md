@@ -52,14 +52,57 @@ print("✅ Dataset berhasil di-upload!")
 
 ### Opsi B: Google Drive (Recommended)
 
+**📁 STRUKTUR FOLDER DI GOOGLE DRIVE:**
+
+```
+My Drive/
+└── Dataset Original/
+    ├── train/
+    │   ├── healthy/
+    │   ├── leaf curl/
+    │   ├── leaf spot/
+    │   ├── whitefly/
+    │   └── yellowish/
+    ├── test/ (sama seperti train)
+    └── val/ (sama seperti train)
+```
+
+**🔗 Cara Upload ke Google Drive:**
+
+1. Buka https://drive.google.com
+2. Upload folder `Dataset Original` ke My Drive
+3. Atau zip folder dan upload, lalu extract di Colab
+
+**💻 Code untuk Copy dari Google Drive:**
+
 ```python
 # Mount Google Drive
 from google.colab import drive
 drive.mount('/content/drive')
 
-# Copy dataset dari Drive
+# Copy dataset dari Drive ke Colab
 !cp -r "/content/drive/MyDrive/Dataset Original" ./
+
+# Verifikasi struktur folder
+!ls -la "Dataset Original/"
+!ls -la "Dataset Original/train/"
+
 print("✅ Dataset berhasil di-copy dari Google Drive!")
+```
+
+**🗜️ Jika upload dalam bentuk ZIP:**
+
+```python
+# Mount Google Drive
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Extract ZIP file dari Drive
+import zipfile
+with zipfile.ZipFile('/content/drive/MyDrive/Dataset_Original.zip', 'r') as zip_ref:
+    zip_ref.extractall('.')
+
+print("✅ Dataset berhasil di-extract dari ZIP!")
 ```
 
 ## 5. **Verifikasi Setup**
@@ -114,6 +157,39 @@ print("✅ Hasil training berhasil disimpan ke GitHub!")
 ---
 
 ## 🔧 Troubleshooting
+
+### ❌ Error: "Not a git repository"
+**Penyebab:** Notebook tidak dijalankan dari repository yang di-clone
+**Solusi:**
+```python
+# Pastikan Anda menjalankan cell setup pertama dengan benar:
+!git clone https://github.com/GayuhAbdiMahardika/gan-chili-project.git
+%cd gan-chili-project
+
+# Verifikasi lokasi
+!pwd
+!ls -la
+```
+
+### ❌ Error: "Dataset not found!"
+**Penyebab:** Dataset belum di-upload atau path salah
+**Solusi - Pilih salah satu:**
+
+**Option A: Google Drive**
+```python
+# 1. Upload folder "Dataset Original" ke Google Drive
+# 2. Jalankan cell Google Drive upload di notebook
+# 3. Verifikasi struktur:
+!ls -la "Dataset Original/"
+!ls -la "Dataset Original/train/"
+```
+
+**Option B: ZIP Upload**
+```python
+# 1. Compress folder "Dataset Original" menjadi ZIP
+# 2. Jalankan cell ZIP upload di notebook
+# 3. Upload file ZIP saat diminta
+```
 
 ### ❌ Jika terjadi error "No module named..."
 
