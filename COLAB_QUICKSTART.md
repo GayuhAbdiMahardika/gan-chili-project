@@ -192,17 +192,30 @@ print("✅ Hasil training berhasil disimpan ke GitHub!")
 
 ## 🔧 Troubleshooting
 
-### ❌ Error: "Not a git repository"
-**Penyebab:** Notebook tidak dijalankan dari repository yang di-clone
-**Solusi:**
+### ❌ Error: "destination path already exists and is not an empty directory"
+**Penyebab:** Repository sudah pernah di-clone sebelumnya di session Colab
+**Solusi - Pilih salah satu:**
+
+**Option A: Update Repository yang Ada (Recommended)**
 ```python
-# Pastikan Anda menjalankan cell setup pertama dengan benar:
+# Cell setup sudah otomatis handle ini - akan update repo yang ada
+%cd gan-chili-project
+!git pull origin main
+```
+
+**Option B: Force Fresh Clone**
+```python
+# Jalankan troubleshooting cell di notebook
+# Uncomment kode di dalam triple quotes dan jalankan
+import shutil
+shutil.rmtree("gan-chili-project")
 !git clone https://github.com/GayuhAbdiMahardika/gan-chili-project.git
 %cd gan-chili-project
+```
 
-# Verifikasi lokasi
-!pwd
-!ls -la
+**Option C: Restart Colab Runtime**
+```
+Runtime → Restart runtime → Jalankan ulang dari cell pertama
 ```
 
 ### ❌ Error: "Dataset not found!"
